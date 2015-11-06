@@ -1,0 +1,23 @@
+<!--{eval $rageneed = \skill2004\get_rage_cost2004();}-->
+<!--{eval $ssneed = \skill2004\get_ss_cost2004();}-->
+<!--{eval $equipneed = \skill2004\check_ss_equip2004($pa);}-->
+<!--{if ($rage>=$rageneed && $ss>=$ssneed)}-->
+<!--{if $equipneed}-->
+<input type="button" class="cmdbutton" style="width:98" name="" value="战歌" 
+onclick="$('command').value='$w1';$('bskill').value=205;postCmd('gamecmd','command.php');this.disabled=true;"><br />
+<div style="width:90%; text-align:left;">
+本次攻击物理伤害<span class="yellow">+20%</span>，<br>属性伤害<span class="yellow">+80%</span>，防具损坏效果<span class="yellow">×2</span><br>消耗<span class="red">$rageneed</span>怒气和<span class="red">$ssneed</span>歌魂
+</div>
+<!--{else}-->
+<input type="button" class="cmdbutton" style="width:98" name="" value="战歌" disabled="true"><br />
+<div style="width:90%; text-align:left;">
+装备<span class="yellow">歌词卡</span>方可发动
+装备<span class="yellow">$equipneed</span>方可发动
+</div>
+<!--{/if}-->
+<!--{else}-->
+<input type="button" class="cmdbutton" style="width:98" name="" value="战歌" disabled="true"><br />
+<div style="width:90%; text-align:left;">
+需要<span class="red">$rageneed</span>怒气和<span class="red">$ssneed</span>歌魂方可发动
+</div>
+<!--{/if}-->
