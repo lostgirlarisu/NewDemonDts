@@ -58,11 +58,11 @@ namespace skill2003
 		if (eval(__MAGIC__)) return $___RET_VALUE;
 		eval(import_module('logger','skill2003','player'));
 		if (\skillbase\skill_query(2003,$pa) && check_unlocked2003($pa)){
-			if(check_ss_equip()){
+			//if(check_ss_equip2003()){
 				$log .= "你从这场战斗中得到了灵感，恢复了{$ss_rc}点歌魂！<br>";
 				$ss+=$ss_rc;
 				if($ss>$mss) $ss=$mss;
-			}
+			//}
 		}
 		return $chprocess($pa,$pd,$active);
 	}
