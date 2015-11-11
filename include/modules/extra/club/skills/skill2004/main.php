@@ -3,7 +3,7 @@
 namespace skill2004
 {
 	$ragecost=0;//5
-	$sscost=0;//20
+	$sscost=20;//20
 	
 	function init() 
 	{
@@ -29,6 +29,7 @@ namespace skill2004
 		if (eval(__MAGIC__)) return $___RET_VALUE;
 		//在这里添加判定技能是否已经被解锁
 		return $pa['lvl']>=7;
+		//return 1;
 	}
 	
 	function skill_onload_event(&$pa)
@@ -63,15 +64,8 @@ namespace skill2004
 		if (eval(__MAGIC__)) return $___RET_VALUE;
 		eval(import_module('player'));
 		//检查有没有装备歌词卡
-		/*
-		eval(import_module('logger'));
-		$log .= "目前变量pa是".json_encode($pa);
-		$log .= "<br>rage是{$pa['rage']}";
-		if($pa['artk'] == 'ss') return 1;
-		//if($artk == 'ss') return 1;
+		if($artk == 'ss') return 1;
 		else return 0;
-		*/
-		return 1;
 	}
 
 	function strike_prepare(&$pa, &$pd, $active)
@@ -87,17 +81,17 @@ namespace skill2004
 		else
 		{
 			$rcost = get_rage_cost2004($pa);
-						eval(import_module('logger'));
-			$log .= '你尚未解锁这个技能！';
-			if (($pa['rage']>=$rcost)&&(1))
+			$scost = get_ss_cost2004($pa);
+			eval(import_module('logger'));
+			if (($pa['rage']>=$rcost) && ($pa['artk']=='ss'))
 			{
 				eval(import_module('logger'));
 				if ($active)
 					$log.="<span class=\"lime\">你对{$pd['name']}发动了技能「战歌」！</span><br>";
 				else  $log.="<span class=\"lime\">{$pa['name']}对你发动了技能「战歌」！</span><br>";
-				$pa['rage']-=$rcost;
-				$pa['ss']-=$sscost;
-				//addnews ( 0, 'bskill2004', $pa['name'], $pd['name'] );
+					$pa['rage']-=$rcost;
+					$pa['ss']-=$scost;
+					addnews ( 0, 'bskill2004', $pa['name'], $pd['name'] );
 			}
 			else
 			{
@@ -112,6 +106,32 @@ namespace skill2004
 		$chprocess($pa, $pd, $active);
 	}
 	
+	function get_physical_dmg_multiplier(&$pa, &$pd, $active)
+	{
+		if (eval(__MAGIC__)) return $___RET_VALUE;
+		$r=Array();
+		if ($pa['bskill']==2004) 
+		{
+			eval(import_module('logger'));
+			if ($active)
+				$log.='<span class="yellow">「战歌」使你造成的基础伤害提高了50%！</span><br>';
+			else  $log.='<span class="yellow">「战歌」使敌人造成的基础伤害提高了50%！</span><br>';
+			$r=Array(1.5);
+		}
+		return array_merge($r,$chprocess($pa,$pd,$active));
+	}
+	
+	function parse_news($news, $hour, $min, $sec, $a, $b, $c, $d, $e)
+	{
+		if (eval(__MAGIC__)) return $___RET_VALUE;
+		
+		eval(import_module('sys','player'));
+		
+		if($news == 'bskill2004') 
+			return "<li>{$hour}时{$min}分{$sec}秒，<span class=\"clan\">{$a}对{$b}发动了技能<span class=\"yellow\">「战歌」</span></span><br>\n";
+		
+		return $chprocess($news, $hour, $min, $sec, $a, $b, $c, $d, $e);
+	}
 
 }
 

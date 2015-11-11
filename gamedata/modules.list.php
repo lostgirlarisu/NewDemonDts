@@ -100,10 +100,8 @@ club18,extra/club/clubs/club18/,1
 skill211,extra/club/skills/skill211/,1
 skill212,extra/club/skills/skill212/,1
 skill214,extra/club/skills/skill214/,1
-skill2000,extra/club/skills/skill2000/,1
 club201,extra/club/clubs/club201/,1
 skill2002,extra/club/skills/skill2002/,1
-skill2006,extra/club/skills/skill2006/,1
 skill2007,extra/club/skills/skill2007/,1
 skill2008,extra/club/skills/skill2008/,1
 skill2009,extra/club/skills/skill2009/,1
@@ -222,6 +220,7 @@ ex_phy_nullify,extra/attr/ex_phy_nullify/,1
 wepchange,extra/attr/wepchange/,1
 blessstone,extra/attr/blessstone/,1
 skill33,extra/club/skills/skill33/,1
+skill2000,extra/club/skills/skill2000/,1
 weather,base/weather/,1
 npcinfo,extra/misc/npcinfo/,1
 skill206,extra/club/skills/skill206/,1
@@ -239,3 +238,4 @@ skill27,extra/club/skills/skill27/,1
 skill43,extra/club/skills/skill43/,1
 skill56,extra/club/skills/skill56/,1
 skill57,extra/club/skills/skill57/,1
+skill2006,extra/club/skills/skill2006/,0

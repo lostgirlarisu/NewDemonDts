@@ -102,8 +102,7 @@ namespace skill2000
 		eval(import_module('player','logger'));
 		$log.= "目前变量pa是<br>".json_encode($pa)."<br>";
 		return;
-	}
-*/
+	}*/
 }
 
 ?>
