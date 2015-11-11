@@ -2,7 +2,7 @@
 
 namespace skill2009
 {
-	$skill2009_cd=10;
+	$skill2009_cd=600;
 	
 	function init() 
 	{
