@@ -1,21 +1,32 @@
 <!--{eval eval(import_module('skill2000'));}-->
 <!--{eval $___TEMP_SKILL_ID=2000;}-->
 <!--{eval $nchoice = \skillbase\skill_getvalue(2000,'choice'); }-->
+<!--{eval $nchoice2 = \skillbase\skill_getvalue(2000,'choice2'); }-->
 {template MOD_CLUBBASE_SKILLDESC_START}
 <span>
 调试
 </span>
 {template MOD_CLUBBASE_SKILLDESC_MID1}
 <td class=b3><span style="margin-top:8px; margin-bottom:8px; display:block;">
-<span class="yellow">DEBUG技</span>&nbsp;&nbsp;遇敌率爆炸，走一步遇一个
+<span class="yellow">DEBUG技</span>&nbsp;&nbsp;
 <table>
+<tr><td>遇敌率爆炸，走一步遇一个</td></tr>
 <tr><td>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;当前状态：
 <!--{if $nchoice==0}--><span class="yellow">关闭</span>
 <!--{else}--><span class="yellow">开启</span>
 <!--{/if}-->
 </td><td>
-<input type="button" style="width:46px" onclick="$('mode').value='special';$('command').value='skill2000_special';$('subcmd').value='upgrade';postCmd('gamecmd','command.php');this.disabled=true;" value="切换">
+<input type="button" style="width:46px" onclick="$('mode').value='special';$('command').value='skill2000_special';$('subcmd').value='upgrade';$('skillpara1').value=1;postCmd('gamecmd','command.php');this.disabled=true;" value="切换">
+</td></tr>
+<tr><td>先攻率爆炸，神速抢攻</td></tr>
+<tr><td>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;当前状态：
+<!--{if $nchoice2==0}--><span class="yellow">关闭</span>
+<!--{else}--><span class="yellow">开启</span>
+<!--{/if}-->
+</td><td>
+<input type="button" style="width:46px" onclick="$('mode').value='special';$('command').value='skill2000_special';$('subcmd').value='upgrade';$('skillpara2').value=1;postCmd('gamecmd','command.php');this.disabled=true;" value="切换">
 </td></tr>
 </table>
 </span></td>

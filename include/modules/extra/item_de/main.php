@@ -33,10 +33,15 @@ namespace item_de
 				return;
 			} elseif ($itm == '转职工具'){
         \clubbase\club_lost();
-        \clubbase\club_acquire(201);
+        //\clubbase\club_acquire(201);
         //\itemmain\itms_reduce($theitem);//这个命令是使道具使用后减少耐久的基础
         $log .="你使用了{$itm}，失去了原有的觉醒力量，并获得了新的力量。";
         return;
+			} elseif ($itm == '调试套装') {
+				$itm1='亚莉丝的神奇药剂';$itm2='亚莉丝的升级药剂';$itm3='调试技能学习书';$itm4='转职工具';
+				$itmk1=$itmk2=$itmk3=$itmk4='EC';
+				$itme1=$itme2=$itme3=$itme4=1;
+				$itms1=$itms2=$itms3=$itms4=1;
 			}
 		}
 		$chprocess($theitem);
@@ -45,12 +50,12 @@ namespace item_de
 	function healpotion(){
 		if (eval(__MAGIC__)) return $___RET_VALUE;
 		
-		eval(import_module('player','logger'));
+		eval(import_module('player','logger','wound'));
 		$hp=$mhp;
 		$sp=$msp;
 		$ss=$mss;
-		//$skillpoint+=10;
-		$log .= "HP、SP以及歌魂全都恢复了！<br>";
+		$inf = '';
+		$log .= "HP、SP以及歌魂全都恢复了！<br>所有异常状态也消除了！<br>";
 		return;
 	}
 	
