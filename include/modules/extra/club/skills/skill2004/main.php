@@ -2,7 +2,7 @@
 
 namespace skill2004
 {
-	$ragecost=0;//5
+	$ragecost=5;//5
 	$sscost=20;//20
 	
 	function init() 
