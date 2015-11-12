@@ -104,6 +104,15 @@ namespace skill2003
 		if($artk == 'ss') return 1;
 		else return 0;
 	}
+	
+	function get_WF_sp_cost(&$pa, &$pd, $active)
+	{
+		if (eval(__MAGIC__)) return $___RET_VALUE;
+		if (!\skillbase\skill_query(2003,$pa) || !check_unlocked2003($pa)) return $chprocess($pa, $pd, $active);
+		eval(import_module('skill2003'));
+		$clv = (int)\skillbase\skill_getvalue(2003,'lvl',$pa);
+		return round($chprocess($pa, $pd, $active)*(1-$spderate[$clv]/100));
+	}
 }
 
 ?>
