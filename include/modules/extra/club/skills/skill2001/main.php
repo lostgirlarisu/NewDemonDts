@@ -45,6 +45,13 @@ namespace skill2001
 		if (\skillbase\skill_query(2001))	return round($cost/2);
 		return $cost;
 	}
+	
+	function calculate_attack_weapon_skill_gain(&$pa, &$pd, $active)
+	{
+		if (eval(__MAGIC__)) return $___RET_VALUE;
+		if (\skillbase\skill_query(2001,$pa) && $pa['wep_kind']=='F') return (1+$chprocess($pa,$pd,$active));
+		return $chprocess($pa,$pd,$active);
+	}
 }
 
 ?>

@@ -51,7 +51,6 @@ skill69,extra/club/skills/skill69/,1
 skill300,extra/achievement/skills/skill300/,1
 attrbase,extra/attr/attrbase/,1
 cooldown,base/cooldown/,1
-skill2001,extra/club/skills/skill2001/,1
 enemy,base/enemy/,1
 gameflow_duel,core/gameflow/gameflow_duel/,1
 ex_attr_trap,extra/attr/ex_attr_trap/,1
@@ -108,6 +107,7 @@ skill232,extra/club/skills/skill232/,1
 skill233,extra/club/skills/skill233/,1
 skill234,extra/club/skills/skill234/,1
 skill235,extra/club/skills/skill235/,1
+skill2001,extra/club/skills/skill2001/,1
 skill236,extra/club/skills/skill236/,1
 skill221,extra/club/skills/skill221/,1
 wep_n,base/weapon/wep_n/,1
