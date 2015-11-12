@@ -153,9 +153,9 @@ skill228,extra/club/skills/skill228/,1
 skill229,extra/club/skills/skill229/,1
 skill408,extra/club/skills/skill408/,1
 skill409,extra/club/skills/skill409/,1
-skill2003,extra/club/skills/skill2003/,1
 skill2004,extra/club/skills/skill2004/,1
 skill2006,extra/club/skills/skill2006/,1
+skill2003,extra/club/skills/skill2003/,1
 skill2005,extra/club/skills/skill2005/,1
 skill53,extra/club/skills/skill53/,1
 skill55,extra/club/skills/skill55/,1
