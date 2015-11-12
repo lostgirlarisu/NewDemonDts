@@ -20,7 +20,7 @@ namespace skill2003
 	{
 		if (eval(__MAGIC__)) return $___RET_VALUE;
 		//在这里添加获得技能时的动作
-		\skillbase\skill_setvalue(2003,'lvl','1',$pa);
+		\skillbase\skill_setvalue(2003,'lvl','0',$pa);
 	}
 	
 	function lost2003(&$pa)

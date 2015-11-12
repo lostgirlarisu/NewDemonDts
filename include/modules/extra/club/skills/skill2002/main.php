@@ -2,6 +2,9 @@
 
 namespace skill2002
 {
+	//歌魂增加量
+	$mss_up = 5;
+	
 	function init() 
 	{
 		define('MOD_SKILL2002_INFO','club;upgrade;');
@@ -47,7 +50,7 @@ namespace skill2002
 	
 	function upgrade2002(){
 		if (eval(__MAGIC__)) return $___RET_VALUE;
-		eval(import_module('player','logger'));
+		eval(import_module('player','logger','skill2002'));
 		if (!\skillbase\skill_query(2002))
 		{
 			$log.='你没有这个技能！<br>';
@@ -58,7 +61,6 @@ namespace skill2002
 			$log.='技能点不足。<br>';
 			return;
 		}
-		$mss_up = 10;
 		$mss += $mss_up;
 		$log.='消耗了<span class="lime">1</span>点技能点，你的歌魂上限提升了<span class="yellow">'.$mss_up.'</span>点。<br>';
 		$skillpoint--;

@@ -159,8 +159,8 @@ skill408,extra/club/skills/skill408/,1
 skill409,extra/club/skills/skill409/,1
 skill2004,extra/club/skills/skill2004/,1
 skill2006,extra/club/skills/skill2006/,1
-skill2005,extra/club/skills/skill2005/,1
 skill237,extra/club/skills/skill237/,1
+skill2005,extra/club/skills/skill2005/,1
 skill53,extra/club/skills/skill53/,1
 skill55,extra/club/skills/skill55/,1
 skill72,extra/club/skills/skill72/,1
