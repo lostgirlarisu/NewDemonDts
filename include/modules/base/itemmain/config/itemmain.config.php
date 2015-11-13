@@ -22,6 +22,7 @@ namespace itemmain
 		//B* item_ub 电池
 		//C* item_uc 各类异常状态治疗药剂
 		//D* armor 各类防具
+		//EC item_de debug工具
 		//EE item_uee 电脑设备
 		//ER radar 雷达
 		//EW weather 天气控制道具

@@ -102,8 +102,6 @@ skill212,extra/club/skills/skill212/,1
 skill214,extra/club/skills/skill214/,1
 club201,extra/club/clubs/club201/,1
 skill2002,extra/club/skills/skill2002/,1
-skill2007,extra/club/skills/skill2007/,1
-skill2008,extra/club/skills/skill2008/,1
 skill2009,extra/club/skills/skill2009/,1
 skill232,extra/club/skills/skill232/,1
 skill233,extra/club/skills/skill233/,1
@@ -159,12 +157,10 @@ skill228,extra/club/skills/skill228/,1
 skill229,extra/club/skills/skill229/,1
 skill408,extra/club/skills/skill408/,1
 skill409,extra/club/skills/skill409/,1
-skill2003,extra/club/skills/skill2003/,1
 skill2004,extra/club/skills/skill2004/,1
 skill2006,extra/club/skills/skill2006/,1
 skill237,extra/club/skills/skill237/,1
 skill2005,extra/club/skills/skill2005/,1
-skill237,extra/club/skills/skill237/,1
 skill53,extra/club/skills/skill53/,1
 skill55,extra/club/skills/skill55/,1
 skill72,extra/club/skills/skill72/,1

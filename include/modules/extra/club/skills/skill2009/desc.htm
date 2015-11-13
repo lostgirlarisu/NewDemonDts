@@ -1,0 +1,50 @@
+<!--{eval $___TEMP_SKILL_ID=2009;}-->
+<!--{eval eval(import_module('skill2009'));}-->
+<!--{eval $rt2009 = \skill2009\get_rest_time2009();}-->
+{template MOD_CLUBBASE_SKILLDESC_START}
+<span>
+创作
+</span>
+{template MOD_CLUBBASE_SKILLDESC_MID1}
+<td class=b3><span style="margin-top:8px; margin-bottom:8px; display:block;">
+选择以下一个功能发动，冷却时间<span class="yellow">$skill2009_cd</span>秒<br>
+<!--{if $rt2009 >0}-->
+<span class="clan">技能冷却中，冷却时间还剩<span>$rt2009</span>秒。</span><br>
+<!--{/if}-->
+<table>
+<tr>
+<td>
+1.音响装载：给当前装备的武器附加音波属性。
+</td>
+<td>
+<!--{if $rt2009 <= 0}-->
+<input type="button" style="width:46px" onclick="$('mode').value='special';$('command').value='skill2009_special';$('subcmd').value='weapon_evo2009';postCmd('gamecmd','command.php');this.disabled=true;" value="发动">
+<!--{else}-->
+<input type="button" style="width:46px" disabled="true" value="发动">
+<!--{/if}-->
+<br>
+</td>
+</tr>
+<tr>
+<td>
+2.作曲：把当前装备的饰品转换成歌词卡。
+</td>
+<td>
+<!--{if $rt2009 <= 0}-->
+<input type="button" style="width:46px" onclick="$('mode').value='special';$('command').value='skill2009_special';$('subcmd').value='compose2009';postCmd('gamecmd','command.php');this.disabled=true;" value="发动">
+<!--{else}-->
+<input type="button" style="width:46px" disabled="true" value="发动">
+<!--{/if}-->
+<br>
+</td>
+</table>
+</span></td>
+<td class=b3 width=46>
+</td>
+{template MOD_CLUBBASE_SKILLDESC_MID2}
+<!--{if !$___TEMP_THIS_SKILL_ACQUIRED}-->
+<span class="yellow">
+在这里写上还没有获得这个技能时的提示（例如需要等级XX级之类）
+</span>
+<!--{/if}-->
+{template MOD_CLUBBASE_SKILLDESC_END}
