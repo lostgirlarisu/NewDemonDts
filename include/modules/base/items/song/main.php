@@ -21,8 +21,7 @@ namespace song
 		if (eval(__MAGIC__)) return $___RET_VALUE;
 		eval(import_module('sys','player','map','logger'));
 		
-		//$r=$arte;
-		$r=get_ss_cost($arte);
+		$r=$arte;
 
 		if ($ss>=$r){
 			$ss-=$r;
@@ -143,12 +142,6 @@ namespace song
 			return "<li>{$hour}时{$min}分{$sec}秒，<span class=\"yellow\">{$a}</span>在<span class=\"yellow\">{$b}</span>歌唱了<span class=\"red\">{$c}</span>。<br>\n";
 		
 		return $chprocess($news, $hour, $min, $sec, $a, $b, $c, $d, $e);
-	}
-	
-	function get_ss_cost($cost=0){
-		if (eval(__MAGIC__)) return $___RET_VALUE;
-		//为了让偶像大师技能函数实现接管而增加的
-		return $cost;	
 	}
 }
 
