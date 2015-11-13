@@ -1,3 +1,5 @@
+<!--{eval eval(import_module('skill2007'));}-->
+<!--{eval $equipneed = \skill2007\check_ss_equip2007($pa);}-->
 <!--{eval $___TEMP_SKILL_ID=2007;}-->
 {template MOD_CLUBBASE_SKILLDESC_START}
 <span>
@@ -5,14 +7,16 @@
 </span>
 {template MOD_CLUBBASE_SKILLDESC_MID1}
 <td class=b3><span style="margin-top:8px; margin-bottom:8px; display:block;">
-<span class="yellow">战斗技</span>&nbsp;&nbsp;消耗50怒气与全部歌魂，对敌人造成最大生命的（歌魂消耗/2）%伤害（最大75%），对NPC效果为最终伤害提升3倍，一局仅一次
+<span class="yellow">战斗技</span>&nbsp;&nbsp;
+消耗<span class="yellow">$ragecost</span>点怒气并且额外消耗歌魂，对敌人造成生命上限的<span class="yellow">歌魂消耗量%</span>伤害（最大75%）<br>
+如果敌人是NPC则效果变为根据歌魂消耗量使最终伤害提升最多<span class="yellow">300%</span>，一局仅一次
 </span></td>
 <td class=b3 width=46>
 </td>
 {template MOD_CLUBBASE_SKILLDESC_MID2}
 <!--{if !$___TEMP_THIS_SKILL_ACQUIRED}-->
 <span class="yellow">
-19级时解锁
+20级时解锁
 </span>
 <!--{/if}-->
 {template MOD_CLUBBASE_SKILLDESC_END}
