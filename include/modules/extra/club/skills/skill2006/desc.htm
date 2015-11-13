@@ -1,0 +1,33 @@
+<!--{eval eval(import_module('skill2006'));}-->
+<!--{eval $equipneed = \skill2006\check_ss_equip2006($pa);}-->
+<!--{eval $___TEMP_SKILL_ID=2006;}-->
+{template MOD_CLUBBASE_SKILLDESC_START}
+<span>
+言灵
+</span>
+{template MOD_CLUBBASE_SKILLDESC_MID1}
+<td class=b3><span style="margin-top:8px; margin-bottom:8px; display:block;">
+<!--{eval $clv = (int)\skillbase\skill_getvalue(2006,'lvl'); }-->
+<!--{eval $totlv = count($upgradecost)-1; }-->
+<span class="lime">当前级别$clv/$totlv</span>&nbsp;
+<!--{if $upgradecost[$clv] !== -1}-->消耗<span class="lime">$upgradecost[$clv]</span>点技能点升至下一级<!--{/if}--><br>
+提升灵系武器的射程和<span class="yellow">$atk_up2006[$clv]</span>%物理伤害<br>
+装备歌词卡才能生效
+<span class="yellow"><!--{if $equipneed}-->[已装备]<!--{else}-->[未装备]<!--{/if}--></span>
+</span></td>
+<td class=b3 width=46>
+<!--{if $upgradecost[$clv] !== -1}-->
+<!--{if $skillpoint>=$upgradecost[$clv]}-->
+<input type="button" style="width:46px" onclick="$('mode').value='special';$('command').value='skill2006_special';$('subcmd').value='upgrade';postCmd('gamecmd','command.php');this.disabled=true;" value="升级">
+<!--{else}-->
+<input type="button" style="width:46px" disabled="true" value="升级">
+<!--{/if}-->
+<!--{/if}-->
+</td>
+{template MOD_CLUBBASE_SKILLDESC_MID2}
+<!--{if !$___TEMP_THIS_SKILL_ACQUIRED}-->
+<span class="yellow">
+15级时解锁
+</span>
+<!--{/if}-->
+{template MOD_CLUBBASE_SKILLDESC_END}

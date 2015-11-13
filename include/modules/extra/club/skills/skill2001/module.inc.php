@@ -1,9 +1,9 @@
 <?php
 
-namespace skill2006
+namespace skill2001
 {
 	////////// MODULE HEADER START ///////////////
-	$___MODULE_dependency = 'skillbase clubbase weapon player';
+	$___MODULE_dependency = 'skillbase song weapon clubbase';
 	$___MODULE_dependency_optional = '';
 	$___MODULE_conflict = '';
 	$___MODULE_codelist = 'main.php';
