@@ -7,10 +7,12 @@
 </span>
 {template MOD_CLUBBASE_SKILLDESC_MID1}
 <td class=b3><span style="margin-top:8px; margin-bottom:8px; display:block;">
+<!--{eval $skill2007_cnt=(int)\skill2007\get_remaintime2007();}-->
 <span class="yellow">战斗技</span>&nbsp;&nbsp;
+<span class="red">&nbsp;&nbsp;限定技&nbsp;本局还可发动<span>$skill2007_cnt</span>/1次</span><br>
 消耗<span class="yellow">$ragecost</span>点怒气并且额外消耗歌魂<br>
 在战斗流程前对敌人造成其生命上限的<span class="yellow">歌魂消耗量%</span>伤害（最大75%）<br>
-如果敌人是NPC则效果变为根据歌魂消耗量使最终伤害提升最多<span class="yellow">300%</span>，一局仅一次<br>
+如果敌人是NPC则效果变为根据歌魂消耗量使最终伤害提升最多<span class="yellow">300%</span><br>
 装备歌词卡才能使用
 <span class="yellow"><!--{if $equipneed}-->[已装备]<!--{else}-->[未装备]<!--{/if}--></span>
 </span></td>
