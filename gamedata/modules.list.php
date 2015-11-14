@@ -102,6 +102,7 @@ skill214,extra/club/skills/skill214/,1
 club201,extra/club/clubs/club201/,1
 skill2009,extra/club/skills/skill2009/,1
 skill2002,extra/club/skills/skill2002/,1
+skill2010,extra/club/skills/skill2010/,1
 skill2007,extra/club/skills/skill2007/,1
 skill2001,extra/club/skills/skill2001/,1
 skill221,extra/club/skills/skill221/,1
