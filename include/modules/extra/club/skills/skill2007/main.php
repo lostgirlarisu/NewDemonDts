@@ -3,7 +3,7 @@
 namespace skill2007
 {
 	//怒气消耗
-	$ragecost=0;//50
+	$ragecost=50;//50
 	//歌魂消耗上限
 	$sscost_limit=75;//75
 	//对NPC最大伤害提升率
@@ -105,17 +105,22 @@ namespace skill2007
 		{
 			$remtime = (int)get_remaintime2007($pa);
 			$rcost = get_rage_cost2007($pa);
-			//if ($remtime>=1 && $pa['rage']>=$rcost && $pa['artk']=='ss')
-			if ($remtime>=1 && $pa['rage']>=$rcost)
+			if ($remtime>=1 && $pa['rage']>=$rcost && $pa['artk']=='ss')
 			{
 				eval(import_module('logger','skill2007'));
 				if ($active)
 					$log.="<span class=\"lime\">你对{$pd['name']}发动了技能「安魂」！</span><br>";
 				else  $log.="<span class=\"lime\">{$pa['name']}对你发动了技能「安魂」！</span><br>";
 				$pa['rage']-=$rcost;
-				//$remtime--;
+				$remtime--;
 				\skillbase\skill_setvalue(2007,'rmtime',$remtime,$pa);
-				addnews ( 0, 'bskill2007', $pa['name'], $pd['name'] );
+				if($pd['type']!=0){
+					$text_tmp='';
+				}else {
+					//对玩家发动安魂技能的附加文字
+				 	$text_tmp='，造成了强制生命削减';
+				}
+				addnews ( 0, 'bskill2007', $pa['name'], $pd['name'], $text_tmp);
 				finalsong_for_player($pa, $pd, $active);
 			}
 			else
@@ -136,7 +141,7 @@ namespace skill2007
 		//因为不知道该接管哪个函数所以只好额外开了一个
 		//该函数是技能对玩家起作用时的效果
 		eval(import_module('skill2007','logger','attack'));
-		if ($pa['bskill']==2007 && $pd['type']!=0){
+		if ($pa['bskill']==2007 && $pd['type']==0){
 			if($pa['ss']>$sscost_limit){
 				$var_2007=$sscost_limit;
 				$pa['ss']-=$sscost_limit;
@@ -158,7 +163,7 @@ namespace skill2007
 		if (eval(__MAGIC__)) return $___RET_VALUE;
 		eval(import_module('skill2007'));
 		$r=Array();
-		if ($pa['bskill']==2007 && $pd['type']==0) 
+		if ($pa['bskill']==2007 && $pd['type']!=0) 
 		{
 			eval(import_module('logger'));
 			if($pa['ss']>$sscost_limit){
@@ -184,7 +189,7 @@ namespace skill2007
 		eval(import_module('sys','player'));
 		
 		if($news == 'bskill2007') 
-			return "<li>{$hour}时{$min}分{$sec}秒，<span class=\"clan\">{$a}对{$b}发动了技能<span class=\"yellow\">「安魂」</span></span><br>\n";
+			return "<li>{$hour}时{$min}分{$sec}秒，<span class=\"clan\">{$a}对{$b}发动了技能<span class=\"yellow\">「安魂」</span>{$c}</span><br>\n";
 		
 		return $chprocess($news, $hour, $min, $sec, $a, $b, $c, $d, $e);
 	}
