@@ -70,6 +70,9 @@ npcchat,base/npcchat/,1
 skill21,extra/club/skills/skill21/,1
 ex_hp_def,extra/attr/ex_hp_def/,1
 skill204,extra/club/skills/skill204/,1
+kuji0,extra/card/kuji/kuji0/,1
+kuji1,extra/card/kuji/kuji1/,1
+kuji2,extra/card/kuji/kuji2/,1
 skill39,extra/club/skills/skill39/,1
 skill29,extra/club/skills/skill29/,1
 skill31,extra/club/skills/skill31/,1
@@ -102,7 +105,6 @@ skill214,extra/club/skills/skill214/,1
 club201,extra/club/clubs/club201/,1
 skill2009,extra/club/skills/skill2009/,1
 skill2002,extra/club/skills/skill2002/,1
-skill2010,extra/club/skills/skill2010/,1
 skill2007,extra/club/skills/skill2007/,1
 skill2001,extra/club/skills/skill2001/,1
 skill221,extra/club/skills/skill221/,1
