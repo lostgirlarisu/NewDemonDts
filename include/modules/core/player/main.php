@@ -131,7 +131,7 @@ namespace player
 		return;
 	}
 
-	function add_new_killarea($where)
+	function add_new_killarea($where,$atime)
 	{
 		if (eval(__MAGIC__)) return $___RET_VALUE;
 		
@@ -160,7 +160,7 @@ namespace player
 			}
 		} 
 		$alivenum = $db->result($db->query("SELECT COUNT(*) FROM {$tablepre}players WHERE hp>0 AND type=0"), 0);
-		$chprocess($where);
+		$chprocess($where,$atime);
 	}
 	
 	function update_sdata()

@@ -53,28 +53,35 @@ namespace cardbase
 			else $n=$pa['name'];
 		}
 		$result = $db->query("SELECT gold FROM {$gtablepre}users WHERE username='$n'");
-		$cg = $db->result($result);
+		$cg = $db->result($result,0);
 		$cg=$cg+$num;
 		if ($cg<0) $cg=0;
 		$db->query("UPDATE {$gtablepre}users SET gold='$cg' WHERE username='$n'");
 	}
-
+	
+	function calc_qiegao_drop(&$pa,&$pd,&$active){
+		if (eval(__MAGIC__)) return $___RET_VALUE;
+		eval(import_module('cardbase','sys','logger','map'));
+		$qiegaogain=0;
+		if (!in_array($gametype,Array(10,11,12,13,14))){		
+			if (($pd['type']==90)&&(($areanum/$areaadd)<1)&&(rand(0,99)<10)){//杂兵
+				$qiegaogain=rand(7,15);
+			}
+			if (($pd['type']==2)&&(($areanum/$areaadd)<1)){//幻象
+				$qiegaogain=rand(9,19);
+			}
+		}
+		return $qiegaogain;
+	}
+	
 	function player_kill_enemy(&$pa,&$pd,$active){
 		if (eval(__MAGIC__)) return $___RET_VALUE;
 		$chprocess($pa, $pd, $active);
 		eval(import_module('cardbase','sys','logger','map'));
-		if (!in_array($gametype,Array(10,11,12,13,14))){	
-			$qiegaogain=0;
-			if (($pd['type']==90)&&(($areanum/$areaadd)<1)&&(rand(0,99)<10)){//杂兵
-				$qiegaogain=rand(7,15);
-				get_qiegao($qiegaogain,$pa);
-			}
-			if (($pd['type']==2)&&(($areanum/$areaadd)<1)){//幻象
-				$qiegaogain=rand(9,19);
-				get_qiegao($qiegaogain,$pa);
-			}
-			if ($qiegaogain>0)
-				$log.="<span class=\"orange\">敌人掉落了{$qiegaogain}单位的切糕！</span><br>";
+		$qiegaogain=calc_qiegao_drop($pa,$pd,$active);
+		if ($qiegaogain>0){
+			get_qiegao($qiegaogain,$pa);
+			$log.="<span class=\"orange\">敌人掉落了{$qiegaogain}单位的切糕！</span><br>";
 		}
 	}	
 	
@@ -117,6 +124,27 @@ namespace cardbase
 		if (eval(__MAGIC__)) return $___RET_VALUE;
 		eval(import_module('cardbase'));
 		return in_array($packname, $packlist);
+	}
+	
+	function kuji($type,&$pa){
+		if (eval(__MAGIC__)) return $___RET_VALUE;
+		eval(import_module('cardbase'));
+		$ktype=(int)$type;
+		$func='kuji'.$ktype.'\\kujidraw'.$ktype;
+		if (defined('MOD_KUJI'.$ktype)) {
+			$kr=$func($pa);
+			if (!is_array($kr)){
+				if ($kr==-1){
+					return -1;
+				}else{
+					$dr=array($kr);
+				}
+			}else{
+				$dr=$kr;
+			}
+			return $dr;
+		}
+		return -1;
 	}
 }
 
