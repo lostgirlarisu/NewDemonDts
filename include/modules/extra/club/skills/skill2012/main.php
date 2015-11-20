@@ -51,6 +51,7 @@ namespace skill2012
 		}
 		//如果对手中收录而死的话跳出打击准备流程，防止发动直死后NPC继续补刀导致覆盖死亡信息
 		if(\skillbase\skill_query(2012,$pa) && check_unlocked2012($pa) && $pd['hp']<=0) return;
+		$chprocess($pa, $pd, $active);
 	}
 
 	function embody2012(&$pa, &$pd, $active){
@@ -121,6 +122,7 @@ namespace skill2012
 		if(\skillbase\skill_query(2012,$pa) && check_unlocked2012($pa) && $pd['hp']<=0){
 			return;
 		}
+		$chprocess($pa, $pd, $active);
 	}
 }
 

@@ -112,6 +112,7 @@ skill234,extra/club/skills/skill234/,1
 skill235,extra/club/skills/skill235/,1
 skill420,extra/club/skills/skill420/,1
 skill2012,extra/club/skills/skill2012/,1
+skill2013,extra/club/skills/skill2013/,1
 skill2007,extra/club/skills/skill2007/,1
 skill2001,extra/club/skills/skill2001/,1
 skill236,extra/club/skills/skill236/,1
