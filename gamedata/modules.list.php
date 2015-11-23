@@ -112,7 +112,8 @@ skill234,extra/club/skills/skill234/,1
 skill235,extra/club/skills/skill235/,1
 skill420,extra/club/skills/skill420/,1
 skill2012,extra/club/skills/skill2012/,1
-skill2013,extra/club/skills/skill2013/,1
+skill2014,extra/club/skills/skill2014/,1
+skill2016,extra/club/skills/skill2016/,1
 skill2007,extra/club/skills/skill2007/,1
 skill2001,extra/club/skills/skill2001/,1
 skill236,extra/club/skills/skill236/,1
@@ -182,6 +183,7 @@ wep_g,base/weapon/wep_g/,1
 wep_j,base/weapon/wep_j/,1
 skill2003,extra/club/skills/skill2003/,1
 miracletrap,base/items/miracletrap/,1
+skill2013,extra/club/skills/skill2013/,1
 event,base/event/,1
 skill5,extra/attr/skills/skill5/,1
 skill6,extra/attr/skills/skill6/,1

@@ -1,9 +1,9 @@
 <?php
 
-namespace skill编号
+namespace skill2016
 {
 	////////// MODULE HEADER START ///////////////
-	$___MODULE_dependency = 'skillbase';
+	$___MODULE_dependency = 'skillbase clubbase attack';
 	$___MODULE_dependency_optional = '';
 	$___MODULE_conflict = '';
 	$___MODULE_codelist = 'main.php';
