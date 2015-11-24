@@ -71,6 +71,8 @@ npcchat,base/npcchat/,1
 skill21,extra/club/skills/skill21/,1
 ex_hp_def,extra/attr/ex_hp_def/,1
 skill204,extra/club/skills/skill204/,1
+skill2018,extra/club/skills/skill2018/,1
+skill2017,extra/club/skills/skill2017/,1
 kuji0,extra/card/kuji/kuji0/,1
 kuji1,extra/card/kuji/kuji1/,1
 kuji2,extra/card/kuji/kuji2/,1

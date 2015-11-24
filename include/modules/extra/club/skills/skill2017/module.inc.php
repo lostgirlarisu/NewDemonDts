@@ -1,6 +1,6 @@
 <?php
 
-namespace skill编号
+namespace skill2017
 {
 	////////// MODULE HEADER START ///////////////
 	$___MODULE_dependency = 'skillbase attack';

@@ -30,6 +30,7 @@ namespace item_de
 			} elseif ($itm == '调试技能学习书'){
 				\skillbase\skill_lost(2000);
 				\skillbase\skill_acquire(2000);
+				//\skillbase\skill_acquire(2017);
 				return;
 			} elseif ($itm == '转职工具'){
         \clubbase\club_lost();

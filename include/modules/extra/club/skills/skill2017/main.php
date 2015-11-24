@@ -46,13 +46,24 @@ namespace skill2017
 	{
 		if (eval(__MAGIC__)) return $___RET_VALUE;
 		
+		//由于代码逻辑使然，不论玩家或NPC，从代码基础外层导入的先攻方为$pa
+		//所以NPC专用技需要根据情况两边都检测一次才能确保不会出现玩家先攻的情况下NPC不发动技能
+		skill_effect2017($pa);
+		skill_effect2017($pd);
+		$chprocess($pa,$pd,$active);
+	}
+	
+	function skill_effect2017(&$pa){
+		if (eval(__MAGIC__)) return $___RET_VALUE;
+		eval(import_module('logger'));
+		
+		//$log.="DEBUG:skill2017结点01<br>";
 		if(\skillbase\skill_query(2017,$pa) && check_unlocked2017($pa)){
+			//$log.="DEBUG:{$pa['name']}回血了<br>";
 			$rand_count=rand(1,4);
 			$pa['mhp']+=$rand_count;
 			$pa['hp']=$pa['mhp'];
 		}
-		
-		$chprocess($pa,$pd,$active);
 	}
 }
 
