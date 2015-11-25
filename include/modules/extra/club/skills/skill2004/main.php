@@ -114,8 +114,8 @@ namespace skill2004
 		{
 			eval(import_module('logger'));
 			if ($active)
-				$log.='<span class="yellow">「战歌」使你造成的基础伤害提高了50%！</span><br>';
-			else  $log.='<span class="yellow">「战歌」使敌人造成的基础伤害提高了50%！</span><br>';
+				$log.='<span class="yellow">「战歌」使你造成的物理伤害提高了50%！</span><br>';
+			else  $log.='<span class="yellow">「战歌」使敌人造成的物理伤害提高了50%！</span><br>';
 			$r=Array(1.5);
 		}
 		return array_merge($r,$chprocess($pa,$pd,$active));

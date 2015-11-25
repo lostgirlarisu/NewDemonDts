@@ -73,6 +73,7 @@ ex_hp_def,extra/attr/ex_hp_def/,1
 skill204,extra/club/skills/skill204/,1
 skill2018,extra/club/skills/skill2018/,1
 skill2017,extra/club/skills/skill2017/,1
+skill2019,extra/club/skills/skill2019/,1
 kuji0,extra/card/kuji/kuji0/,1
 kuji1,extra/card/kuji/kuji1/,1
 kuji2,extra/card/kuji/kuji2/,1
@@ -175,6 +176,7 @@ skill412,extra/club/skills/skill412/,1
 skill416,extra/club/skills/skill416/,1
 skill419,extra/club/skills/skill419/,1
 skill414,extra/club/skills/skill414/,1
+skill2020,extra/club/skills/skill2020/,1
 skill2011,extra/club/skills/skill2011/,1
 skill53,extra/club/skills/skill53/,1
 skill55,extra/club/skills/skill55/,1
