@@ -265,6 +265,9 @@ namespace item_de
 			return "<li>{$hour}时{$min}分{$sec}秒，<span class=\"lime\">{$a}呼唤了玩家脑子一热自荐的为追求个性却完全违背游戏平衡的文案所设计的NPC深渊灾厄！</span><br>\n";
 		if($news == 'demon2')
 			return "<li>{$hour}时{$min}分{$sec}秒，<span class=\"lime\">{$a}使用了恶魔晶状体，使得什么可怕存在加入了战场！</span><br>\n";
+		//使用结局道具的新闻接管
+		if($news == 'end11')
+			return "<li>{$hour}时{$min}分{$sec}秒，<span class=\"red\">{$a}重启了九系统，游戏本身的存在消匿在时空尽头了。</span><br>\n";
 		return $chprocess($news, $hour, $min, $sec, $a, $b, $c, $d, $e);
 	}
 }

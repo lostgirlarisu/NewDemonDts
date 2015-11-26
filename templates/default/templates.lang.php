@@ -2,7 +2,8 @@
 
 $language = array
 	(
-	'title' => 'ACFUN 大 逃 杀',
+	//'title' => 'ACFUN 大 逃 杀',
+	'title' => '深渊大逃杀：新生',
 	
 	'index' => '首页',
 	'fullwin' => '全屏模式',
@@ -58,10 +59,14 @@ $language = array
 	'wingames' => '获胜场数',
 	'winrate' => '胜率',
 	
-	'valid' => '入场手续',
-	'validover' => '入场表格填写完成',
-	'enternotice' => '进入会场',
-	'enterbattlefield' => '进入大逃杀战场',
+	//'valid' => '入场手续',
+	//'validover' => '入场表格填写完成',
+	//'enternotice' => '进入会场',
+	//'enterbattlefield' => '进入大逃杀战场',
+	'valid' => '转校手续',
+	'validover' => '转校手续完成',
+	'enternotice' => '修学旅行出发',
+	'enterbattlefield' => '离开教室',
 	'gamestart' => '游戏开始',
 	'enter' => '进入游戏',
 	'quit' => '账号退出',
@@ -76,7 +81,8 @@ $language = array
 	'icon' => '头像',
 	'sNo' => '学号',
 	'level' => '等级',
-	'club' => '内定称号',
+	//'club' => '内定称号',
+	'club' => '觉醒力量',
 	'hp' => '生命',
 	'sp' => '体力',
 	'att' => '攻击力',
@@ -113,12 +119,14 @@ $language = array
 	'wf' => '灵',
 	'ss' => '歌魂',
 	'karma' => '罪业',
-	'newsnotice' => '<span class="evergreen">“各位仍在努力奋战，咱很欣慰。<br />以下是到现在为止的游戏状况。<br />请各位再接再厉。”</span>',
+	//'newsnotice' => '<span class="evergreen">“各位仍在努力奋战，咱很欣慰。<br />以下是到现在为止的游戏状况。<br />请各位再接再厉。”</span>',
+	'newsnotice' => '<span class="evergreen">“各位仍在努力奋战，咱很欣慰。<br />以下是到现在为止的游戏状况。<br />今天也要好好干喔！”</span>',
 	'useitem' => '>>使用',
 	'end' => '游戏结束！',
 	'send' => '发送',
 	'refresh' => '刷新',
-	'maptitle' => '虚拟世界地图',
+	//'maptitle' => '虚拟世界地图',
+	'maptitle' => '岛屿简易地图',
 	);
 
 
