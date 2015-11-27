@@ -297,6 +297,7 @@ namespace addnpc
 				'skill' => 750,
 				'money' => 12000,
 				//'skills' => 14066,
+				'skills'=>array('2011'=>'1','2012'=>'1',),
 				'pose' => 1,
 				'tactic' => 3,
 				'wep' => '深渊百科全书真本',
@@ -355,6 +356,7 @@ namespace addnpc
 				(
 				'name' => '数纳 步',
 				'icon' => 1600,
+				'skills'=>array('2017'=>'1','2018'=>'1',),
 				'lvl' => 1,
 				'mhp' => 4,
 				'club' => 98,
@@ -383,6 +385,7 @@ namespace addnpc
 				(
 				'name' => '北大路 真',
 				'icon' => 1601,
+				'skills'=>array('2019'=>'1'),
 				'club' => 9,
 				'wep' => '大亚光的超能力者用201型力场绝缘炮',
 				'wepk' => 'WCF',
@@ -415,6 +418,7 @@ namespace addnpc
 				(
 				'name' => '五十铃川 兼元',
 				'icon' => 1602,
+				'skills'=>array('2020'=>'1'),
 				'gd' => 'f',
 				'club' => 9,
 				'pose'=> 4,
