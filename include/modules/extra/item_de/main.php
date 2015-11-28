@@ -12,7 +12,7 @@ namespace item_de
 	{
 		if (eval(__MAGIC__)) return $___RET_VALUE;
 		
-		eval(import_module('sys','player','logger','clubbase','skillbase'));
+		eval(import_module('sys','player','logger','clubbase','skillbase','addnpc'));
 		
 		$itm=&$theitem['itm']; $itmk=&$theitem['itmk'];
 		$itme=&$theitem['itme']; $itms=&$theitem['itms']; $itmsk=&$theitem['itmsk'];
@@ -43,6 +43,7 @@ namespace item_de
 				$itmk1=$itmk2=$itmk3=$itmk4='EC';
 				$itme1=$itme2=$itme3=$itme4=1;
 				$itms1=$itms2=$itms3=$itms4=1;
+				return;
 			}
 		}elseif (strpos ( $itmk, 'Y' ) === 0 || strpos ( $itmk, 'Z' ) === 0){
 			if ($itm=='觉醒剂试制二型'){
@@ -50,6 +51,7 @@ namespace item_de
 				$log .= "你考虑了一会，<br>把袖子卷了起来，给自己注射了<span class=\"yellow\">{$itm}</span>。<br>";
 				awakepotion();
 				\itemmain\itms_reduce($theitem);
+				return;
 			} elseif ($itm=='紧急情况指示器'){
 				//开启死斗模式的道具
 				$duelstate = \gameflow_duel\duel($now,$itm);
@@ -72,6 +74,7 @@ namespace item_de
 					$wepsk.='i';
 					\itemmain\itms_reduce($theitem);
 				}
+				return;
 			} else{
 				//提示纸条类道具
 				onlynote($itm);
@@ -79,6 +82,7 @@ namespace item_de
 				addnpcitem($theitem);
 				//结局触发类道具
 				endingitem($itm);
+				return;
 			}
 		}
 		$chprocess($theitem);
@@ -136,11 +140,9 @@ namespace item_de
 			}
 			
 		} elseif($deathdice > 35) {
-			$log .= '你突然感觉到强烈的痛苦伴随着一种不可思议的力量贯通全身！<br>
-			持续了一段时间的煎熬结束了，你发现自己并没有什么显著变化。';
+			$log .= '你突然感觉到强烈的痛苦伴随着一种不可思议的力量贯通全身！<br>持续了一段时间的煎熬结束了，你发现自己并没有什么显著变化。';
 		} else {
-			$log .= '你突然感觉到强烈的痛苦伴随着一种不可思议的力量贯通全身！<br>
-			持续了一段时间的煎熬结束了，你感觉十分虚弱。';
+			$log .= '你突然感觉到强烈的痛苦伴随着一种不可思议的力量贯通全身！<br>持续了一段时间的煎熬结束了，你感觉十分虚弱。';
 			$hp=1;
 			$sp=0;
 		}
@@ -152,14 +154,11 @@ namespace item_de
 		eval(import_module('logger'));
 		//只有提示语的道具都放这里
 		if ($itm=='北大路的便笺'){
-			$log .= '你读着便笺上的内容：“……看得出来，伍长一直觊觎着这个叫做九系统的东西。<br>
-			……为了避免本次任务节外生枝，不能让他知道潜艇秘密搬运了九系统的其中一台……”<br>';
+			$log .= '你读着便笺上的内容：“……看得出来，伍长一直觊觎着这个叫做九系统的东西。<br>……为了避免本次任务节外生枝，不能让他知道潜艇秘密搬运了九系统的其中一台……”<br>';
 		} elseif($itm=='九老人的手记卷轴'){
-			$log .= '你读了手记，了解到了九系统的一些秘密以及重启指令。<br>
-			据手记描述，九系统重启的话会发生超光加速……关于之后会导致什么事情发生的描述文字被涂抹掉了。”<br>';
+			$log .= '你读了手记，了解到了九系统的一些秘密以及重启指令。<br>据手记描述，九系统重启的话会发生超光加速……关于之后会导致什么事情发生的描述文字被涂抹掉了。”<br>';
 		}	elseif($itm=='破烂的日记'){
-			$log .= '你翻开了日记，但是前面的字迹全部都莫名其妙的无法认知，只有最后一页的可以理解：<br>
-			“我已经不记得这是第多少次了，就连我本人的记忆也因为重复次数的过多导致开始消失了……或许这个计划真的是不可逆转的，但是我已经没有退路了。”<br>';
+			$log .= '你翻开了日记，但是前面的字迹全部都莫名其妙的无法认知，只有最后一页的可以理解：<br>“我已经不记得这是第多少次了，就连我本人的记忆也因为重复次数的过多导致开始消失了……或许这个计划真的是不可逆转的，但是我已经没有退路了。”<br>';
 		}
 		return;
 	}
@@ -196,7 +195,7 @@ namespace item_de
 			}
 			$log .= "你启动了{$itm}，<br>“资料重载……具现率25%……40%……70%……95%……具现完成。确认资讯，旧具现体损坏率70%以上，判断废弃。”<br>
 			“全面出力处理完成，沟通界面解放。”<br>“姆呼呼呼……我和整个书库界面一起在灵子研究中心等着你们哦。<br>”";
-			addnpc ( 13, 1,1);
+			\addnpc\addnpc ( 13, 1,1);
 			addnews ($now , 'wikigirl', $name);
 			\itemmain\itms_reduce($theitem);
 			return;
@@ -209,7 +208,7 @@ namespace item_de
 			$test = 1;
 			if($test){
 				$log .= "你启动了{$itm}，近期某个开发测试中的NPC被你召唤出来了！<br>";
-				addnpc ( 13, 0,1);
+				\addnpc\addnpc ( 13, 0,1);
 				addnews ($now , 'testnpc', $name);
 			}else{
 				$log .= "你启动了{$itm}，但是由于最近并没有什么开发测试中的NPC，所以什么事都没有发生。<br>";
@@ -226,7 +225,7 @@ namespace item_de
 			if ($rollnum <= 2){
 				$log .= '你不顾后果召唤了某个深渊灾厄，<br>现在后悔也来不及了。<br>';
 				$npcno=rand(0,4);
-				addnpc ( 17, $npcno,1);
+				\addnpc\addnpc ( 17, $npcno,1);
 				addnews ($now , 'demon2', $name);
 			}else{
 				$log .= '你不顾后果企图召唤深渊灾厄，<br>但是什么事也没有发生。<br>';
@@ -241,10 +240,10 @@ namespace item_de
 			}
 			$log .= '你启动了发信器，<br>也许什么人已经迅速定位了你的位置并且正在前来，<br>
 			搜寻打倒他们还是赶紧逃跑？赶紧作出抉择吧！<br>';
-			addnpc ( 16, 0,1);
-			addnpc ( 16, 1,1);
+			\addnpc\addnpc ( 16, 0,1);
+			\addnpc\addnpc ( 16, 1,1);
 			$ex_add=rand(1,10);
-			if ($ex_add <= 5) addnpc ( 16, 2,1);
+			if ($ex_add <= 5) \addnpc\addnpc ( 16, 2,1);
 			addnews ($now , 'ghost9', $name);
 			\itemmain\itms_reduce($theitem);
 			return;

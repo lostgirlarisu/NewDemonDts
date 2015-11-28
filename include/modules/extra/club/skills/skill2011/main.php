@@ -53,9 +53,9 @@ namespace skill2011
 		if (\attrbase\check_itmsk('H',$pa)){
 			if(\skillbase\skill_query(2011,$pd) && check_unlocked2011($pd)){
 				eval(import_module('logger'));
-				if (!$active)
-					$log.="<span class=\"lime\">你的「伤噬结界」使{$pd['name']}无法抵御反噬！</span><br>";
-				else  $log.="<span class=\"lime\">{$pa['name']}的「伤噬结界」使你无法抵御反噬！</span><br>";
+				if($pa['type']===0)
+					$log.="<span class=\"lime\">{$pd['name']}的「伤噬结界」使你无法抵御反噬！</span><br>";
+				else $log.="<span class=\"lime\">{$pd['name']}的「伤噬结界」使{$pa['name']}无法抵御反噬！</span><br>";
 			}else{
 				$rate *= 0.1;
 			}
