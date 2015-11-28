@@ -57,7 +57,11 @@ namespace skill2020
 	function get_physical_dmg_multiplier(&$pa, &$pd, $active)
 	{
 		if (eval(__MAGIC__)) return $___RET_VALUE;
-		$r=Array(skill_calculate2020($pa, $pd, $active));
+		$tmp=skill_calculate2020($pa, $pd, $active);
+		$r=Array();
+		if ($tmp!=-1){
+			$r=Array($tmp);
+		}
 		return array_merge($r,$chprocess($pa,$pd,$active));
 	}
 	
@@ -76,7 +80,7 @@ namespace skill2020
 			else  $log.="<span class=\"yellow\">「剑舞」使敌人造成的物理伤害提高了{$skill_rate}0%！</span><br>";
 			return $skill_rate;
 		}else{
-			return;	
+			return -1;	
 		}
 	}
 	
